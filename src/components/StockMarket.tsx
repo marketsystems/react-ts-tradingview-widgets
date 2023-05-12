@@ -60,7 +60,7 @@ export type StockMarketProps = {
   symbolActiveColor?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -86,6 +86,7 @@ const StockMarket: React.FC<StockMarketProps> = ({
   belowLineFillColorGrowingBottom = "rgba(41, 98, 255, 0)",
   belowLineFillColorFallingBottom = "rgba(41, 98, 255, 0)",
   symbolActiveColor = "rgba(33, 150, 243, 0.12)",
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -121,6 +122,7 @@ const StockMarket: React.FC<StockMarketProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/markets/stocks-usa/`}
+        affId={affId}
         spanText={`Stock market Today`}
       />
     </div>

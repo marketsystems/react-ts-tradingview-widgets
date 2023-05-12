@@ -18,7 +18,7 @@ export type MiniChartProps = {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -35,6 +35,7 @@ const MiniChart: React.FC<MiniChartProps> = ({
   isTransparent = false,
   autosize = false,
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -60,6 +61,7 @@ const MiniChart: React.FC<MiniChartProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/symbols/${symbol}/`}
+        affId={affId}
         spanText={`${symbol} Rates`}
       />
     </div>

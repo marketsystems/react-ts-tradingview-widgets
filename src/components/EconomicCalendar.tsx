@@ -14,7 +14,7 @@ export type EconomicCalendarProps = {
   currencyFilter?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -27,6 +27,7 @@ const EconomicCalendar: React.FC<EconomicCalendarProps> = ({
   locale = "en",
   importanceFilter = "-1,0,1",
   currencyFilter = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -48,6 +49,7 @@ const EconomicCalendar: React.FC<EconomicCalendarProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/markets/currencies/economic-calendar/`}
+        affId={affId}
         spanText={`Economic Calendar`}
       />
     </div>

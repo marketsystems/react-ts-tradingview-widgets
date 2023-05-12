@@ -18,7 +18,7 @@ export interface TickerTapeProps {
   locale?: Locales;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 }
 
@@ -53,6 +53,7 @@ const TickerTape: React.FC<TickerTapeProps> = ({
   largeChartUrl = undefined,
   displayMode = "adaptive",
   locale = "en",
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -74,6 +75,7 @@ const TickerTape: React.FC<TickerTapeProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/markets/`}
+        affId={affId}
         spanText={`Markets`}
       />
     </div>

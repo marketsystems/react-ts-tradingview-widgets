@@ -38,7 +38,7 @@ export type MarketOverviewProps = {
   tabs?: MarketOverviewTab[];
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -181,6 +181,7 @@ const MarketOverview: React.FC<MarketOverviewProps> = ({
   belowLineFillColorFallingBottom = "rgba(41, 98, 255, 0)",
   symbolActiveColor = "rgba(33, 150, 243, 0.12)",
   tabs = defaultTabs,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -218,6 +219,7 @@ const MarketOverview: React.FC<MarketOverviewProps> = ({
         copyrightStyles={copyrightStyles}
         spanText={`Financial Markets`}
         href="https://www.tradingview.com/markets/"
+        affId={affId}
       />
     </div>
   );

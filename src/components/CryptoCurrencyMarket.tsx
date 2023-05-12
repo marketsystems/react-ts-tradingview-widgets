@@ -19,7 +19,7 @@ export type CryptoCurrencyMarketProps = {
   isTransparent?: boolean;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -33,6 +33,7 @@ const CryptoCurrencyMarket: React.FC<CryptoCurrencyMarketProps> = ({
   colorTheme = "light",
   locale = "en",
   isTransparent = false,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -55,6 +56,7 @@ const CryptoCurrencyMarket: React.FC<CryptoCurrencyMarketProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/markets/cryptocurrencies/prices-all/`}
+        affId={affId}
         spanText={`Cryptocurrency Markets`}
       />
     </div>

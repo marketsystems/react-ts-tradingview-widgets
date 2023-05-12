@@ -13,7 +13,7 @@ export type SymbolInfoProps = {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -25,6 +25,7 @@ const SymbolInfo: React.FC<SymbolInfoProps> = ({
   colorTheme = "light",
   isTransparent = false,
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -45,6 +46,7 @@ const SymbolInfo: React.FC<SymbolInfoProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/symbols/${symbol}/`}
+        affId={affId}
         spanText={`${symbol} Price Today`}
       />
     </div>

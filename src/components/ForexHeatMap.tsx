@@ -14,7 +14,7 @@ export type ForexHeatMapProps = {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -39,6 +39,7 @@ const ForexHeatMap: React.FC<ForexHeatMapProps> = ({
   colorTheme = "light",
   locale = "en",
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -60,6 +61,7 @@ const ForexHeatMap: React.FC<ForexHeatMapProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/markets/currencies/forex-heat-map/`}
+        affId={affId}
         spanText={`Forex Heat Map`}
       />
     </div>

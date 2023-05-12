@@ -15,7 +15,7 @@ export type FundamentalDataProps = {
   locale?: Locales;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -29,6 +29,7 @@ const FundamentalData: React.FC<FundamentalDataProps> = ({
   height = 830,
   autosize = false,
   locale = "en",
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -54,6 +55,7 @@ const FundamentalData: React.FC<FundamentalDataProps> = ({
           ":",
           "-"
         )}/financials-overview/`}
+        affId={affId}
         spanText={`${symbol} Fundamental Data`}
       />
     </div>

@@ -101,7 +101,7 @@ export type ScreenerProps = {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 } & ConditionalScreenerProps;
 
@@ -117,6 +117,7 @@ const Screener: React.FC<ScreenerProps> = ({
   locale = "en",
   isTransparent = false,
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -141,6 +142,7 @@ const Screener: React.FC<ScreenerProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/forex-screener/`}
+        affId={affId}
         spanText={`Forex Screener`}
       />
     </div>

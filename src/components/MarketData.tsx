@@ -26,7 +26,7 @@ export interface MarketDataProps {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 }
 
@@ -157,6 +157,7 @@ const MarketData: React.FC<MarketDataProps> = ({
   isTransparent = false,
   locale = "en",
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -180,6 +181,7 @@ const MarketData: React.FC<MarketDataProps> = ({
         copyrightStyles={copyrightStyles}
         spanText={`Financial Markets`}
         href="https://www.tradingview.com/markets/"
+        affId={affId}
       />
     </div>
   );

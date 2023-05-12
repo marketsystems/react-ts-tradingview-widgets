@@ -13,7 +13,7 @@ export type SingleTickerProps = {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -25,6 +25,7 @@ const SingleTicker: React.FC<SingleTickerProps> = ({
   isTransparent = false,
   locale = "en",
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -45,6 +46,7 @@ const SingleTicker: React.FC<SingleTickerProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/symbols/${symbol}/`}
+        affId={affId}
         spanText={`${symbol} Rates`}
       />
     </div>

@@ -54,7 +54,7 @@ export type AdvancedRealTimeChartProps = {
 
   container_id?: string;
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -88,7 +88,7 @@ const AdvancedRealTimeChart: React.FC<AdvancedRealTimeChartProps> = ({
   disabled_features = undefined,
   enabled_features = undefined,
   container_id = `tradingview_${createId(5)}`,
-
+  affId = "",
   copyrightStyles,
 
   ...props
@@ -136,6 +136,7 @@ const AdvancedRealTimeChart: React.FC<AdvancedRealTimeChartProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/symbols/${symbol}`}
+        affId={affId}
         spanText={`${symbol} Chart`}
       />
     </div>

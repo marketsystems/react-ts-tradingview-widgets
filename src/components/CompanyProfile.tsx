@@ -14,7 +14,7 @@ export type CompanyProfileProps = {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -27,6 +27,7 @@ const CompanyProfile: React.FC<CompanyProfileProps> = ({
   isTransparent = false,
   locale = "en",
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -48,6 +49,7 @@ const CompanyProfile: React.FC<CompanyProfileProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/symbols/${symbol}/`}
+        affId={affId}
         spanText={`${symbol} Profile`}
       />
     </div>

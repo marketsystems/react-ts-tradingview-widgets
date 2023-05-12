@@ -83,7 +83,7 @@ export type SymbolOverviewProps = {
   container_id?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -140,6 +140,7 @@ const SymbolOverview: React.FC<SymbolOverviewProps> = ({
 
   autosize = false,
   container_id = `tradingview_${createId(5)}`,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -198,6 +199,7 @@ const SymbolOverview: React.FC<SymbolOverviewProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/symbols/${symbols[0][1]}`}
+        affId={affId}
         spanText={`${symbols[0][1]}`}
       />
     </div>

@@ -11,7 +11,7 @@ export type TickerProps = {
   symbols?: TickerSymbols;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -51,6 +51,7 @@ const Ticker: React.FC<TickerProps> = ({
   showSymbolLogo = true,
   locale = "en",
   symbols = defaultSymbols,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -70,6 +71,7 @@ const Ticker: React.FC<TickerProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/`}
+        affId={affId}
         spanText={`Qoutes`}
       />
     </div>

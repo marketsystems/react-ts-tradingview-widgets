@@ -26,7 +26,7 @@ export type TechnicalAnalysisProps = {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -41,6 +41,7 @@ const TechnicalAnalysis: React.FC<TechnicalAnalysisProps> = ({
   locale = "en",
   colorTheme = "light",
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -67,6 +68,7 @@ const TechnicalAnalysis: React.FC<TechnicalAnalysisProps> = ({
           ":",
           "-"
         )}/technicals/`}
+        affId={affId}
         spanText={`Technical Analysis for ${symbol}`}
       />
     </div>

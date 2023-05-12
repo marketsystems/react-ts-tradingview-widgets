@@ -14,7 +14,7 @@ export type ForexCrossRatesProps = {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 };
 
@@ -39,6 +39,7 @@ const ForexCrossRates: React.FC<ForexCrossRatesProps> = ({
   colorTheme = "light",
   locale = "en",
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   ...props
 }) => {
@@ -60,6 +61,7 @@ const ForexCrossRates: React.FC<ForexCrossRatesProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/markets/currencies/forex-cross-rates/`}
+        affId={affId}
         spanText={`Exchange Rates`}
       />
     </div>

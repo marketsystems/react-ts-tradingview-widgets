@@ -33,7 +33,7 @@ export type TimelineProps = {
   largeChartUrl?: string;
 
   children?: never;
-
+  affId?: string;
   copyrightStyles?: CopyrightStyles;
 } & ConditionalTimelineProps;
 
@@ -47,6 +47,7 @@ const Timeline: React.FC<TimelineProps> = ({
   autosize = false,
   locale = "en",
   largeChartUrl = undefined,
+  affId = "",
   copyrightStyles,
   symbol = "BTCUSD",
   market = "crypto",
@@ -116,6 +117,7 @@ const Timeline: React.FC<TimelineProps> = ({
       <Copyright
         copyrightStyles={copyrightStyles}
         href={`https://www.tradingview.com/${href}`}
+        affId={affId}
         spanText={spanText}
       />
     </div>

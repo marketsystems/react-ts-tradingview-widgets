@@ -4,6 +4,7 @@ import { CopyrightStyles } from "..";
 export type CopyrightProps = {
   copyrightStyles?: CopyrightStyles;
   href?: string;
+  affId?: string;
   spanText?: string;
   text?: string;
   children?: never;
@@ -11,6 +12,7 @@ export type CopyrightProps = {
 
 const Copyright: React.FC<CopyrightProps> = ({
   href,
+  affId,
   spanText,
   text = "By TradingView",
   copyrightStyles,
@@ -32,24 +34,39 @@ const Copyright: React.FC<CopyrightProps> = ({
       color: "#2962FF",
     },
   };
-
+  //build affiliate link if included
+  const affiliateSuffix = affId !== "" ? `?aff_id=${affId}` : "";
+  const url = `${href}${affiliateSuffix}&utm_source=creative&utm_lang=EN`;
   return (
-    <div
-      style={Object.assign({}, defaultStyles.parent, copyrightStyles?.parent)}
-    >
-      <a
-        style={Object.assign({}, defaultStyles.link, copyrightStyles?.link)}
-        href={href}
-        target="_blank"
+    <>
+      <div
+        style={Object.assign({}, defaultStyles.parent, copyrightStyles?.parent)}
       >
-        <span
-          style={Object.assign({}, defaultStyles.span, copyrightStyles?.span)}
+        <a
+          style={Object.assign({}, defaultStyles.link, copyrightStyles?.link)}
+          href={href}
+          target="_blank"
         >
-          {spanText}{" "}
-        </span>
-      </a>
-      {text}
-    </div>
+          <span
+            style={Object.assign({}, defaultStyles.span, copyrightStyles?.span)}
+          >
+            {spanText}{" "}
+          </span>
+        </a>
+        {text}
+      </div>
+      <div>
+        {affId && (
+          <a href={url} target="_blank">
+            <img
+              src="https://s3.tradingview.com/pub/referrals/creatives/DT/EN/728x90Leaderboard.jpg"
+              width="728"
+              height="90"
+            />
+          </a>
+        )}
+      </div>
+    </>
   );
 };
 
